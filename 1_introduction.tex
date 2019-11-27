@@ -1,0 +1,40 @@
+%!TEX root = paper.tex
+\section{Introduction}
+\label{intro}
+% 
+%The rise of the Internet of Things (IoT) has changed drastically the field of data management, due its challenging characteristics. 
+%One major challenge is to manage
+Data analytics applications for the Internet of Things (IoT), such as reporting and monitoring dashboards, consist of real-time data preprocessing and data mining tasks.
+Such applications visualize high-velocity data streams, resulting from large sensor networks, which flow through heterogeneous hardware and network topologies to the cloud.
+
+Since sensor data matches naturally the provided stream processing abstractions, today's IoT applications use cloud-based stream processing engines (SPEs) for their data management tasks. 
+Furthermore, SPEs exploit the on-demand scalability of cloud-resources to support compute-intensive data management workloads.
+However, state-of-the-art SPEs, such as Apache Flink~\cite{flink}, were designed for cloud environments composed of homogeneous high-performance hardware, where nodes are interconnected through high-speed network connections. \textcolor{red}{Laura: Ich finde, der Absatz stört den Lesefluss etwas. Können wir den vielleicht rausnehmen?}
+
+In contrast, IoT infrastructures have different characteristics, both regarding the nodes and the network connections~\cite{fog}. \textcolor{red}{Laura: Hier fände ich den Absatz passender, da der letzte Satz einen guten Abschluss zum vorherigen Absatz bildet und hier dann quasi das "neue Konzept" erklärt wird.}
+Sensor nodes that are potentially geographically distributed, continuously generate data, resulting in a large number of data streams with small-sized records. Intermediate nodes route the produced sensor data to the cloud.
+In this new type of infrastructure, intermediate nodes are heterogeneous, geographically distributed, and sparsely interconnected through unstable networks. 
+In particular, IoT devices range from low-end nodes, such as system-on-a-chip devices and cheap sensors, to high-end nodes, such as desktop computers and server racks. \textcolor{red}{Laura: Same as above.}
+
+Hence, using cloud-based SPEs for IoT applications restricts scaling data management operations only within the cloud. \textcolor{red}{Laura: Same as above. Hence insbesondere bezieht sich hier noch stark auf den vorherigen Teil, weshalb ich es hier auf jeden Fall wichtig fände, den Absatz anders zu wählen.} To scale data management tasks on all participating devices of an IoT infrastructure, the design of data management systems must be revisited.
+Recent work points out, that to exploit resources of every node in an IoT infrastructure, data management systems must employ infrastucture-aware execution strategies~\cite{nes}.
+
+A data management system for the IoT should leverage the scale-out capabilities of the cloud, and at the same time exploit the resources of intermediate nodes. The set of intermediate nodes, also known as fog~\cite{fog}, are only utilized for data forwarding when using cloud-based systems for data management. In particular, the cloud can scale resources for compute-intensive tasks, while nodes in the fog can apply in-network processing~\cite{in-network}, fog computing techniques~\cite{frontier} and acquisitional data processing~\cite{tinydb} to reduce intermediate results. By reducing intermediate results, network traffic and cloud resources are minimized.
+
+NebulaStream (NES)~\cite{nes} is an application and data management platform designed for the upcoming IoT era. 
+NES addresses the mentioned IoT challenges by unifying sensor, fog, and cloud nodes into a single system.
+NES combines research from sensor network, distributed and database system communities. 
+This allows NES to transparently optimize and efficiently execute data management workloads across IoT infrastructures.
+
+Overall, this unified cloud-fog approach enables scaling the number of sensors in data management and visualization applications, while efficiently exploiting the existing hardware infrastructure.
+We demonstrate a visualization application for a public transport system on top of NES. 
+Our application aims to provide real-time monitoring for public transport systems, and detects geographical areas that are critical, i.e., public transport underserves those areas.
+Our GUI consists of an interactive map, which visualizes real-time public transport vehicles, and potential passengers. 
+Through our GUI, visitors are able to move the map, filter vehicles, and configure parameters for the critical area detection. To detect underserved areas, we use a density-based clustering algorithm.
+Public transport systems could use this information to reschedule vehicles manually, or even automatically.
+
+Using the public transport of a city as a representative IoT application, we demonstrate how all participating nodes can be part of a query, and how this influences performance and resource utilization. 
+Overall, we showcase that NES allows large-scale applications on IoT infrastructures and thus enables a variety of upcoming IoT application use cases.
+
+The rest of this paper is structured as follows. In \Cref{iot}, we discuss challenges related to data management in IoT infrastructures. In \Cref{nes}, we provide a brief overview of NES's design principles and its architecture. After that, in \Cref{demo}, we present our demonstration scenario and finally  conclude in \Cref{conclusion}.
+

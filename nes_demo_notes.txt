@@ -1,0 +1,38 @@
+Note Meeting 21.11.2019
+
+visitor will vs visitor 
+
+
+X - Figure 1: External Data benennen, Basestation benennen, Legende?
+X - User/Attendee/Viewer einheitlich -> Viewer
+X - 2 Implementing an IoT use caes
+X - 2.1 Future IoT Applications / use case / Challenged for Iot infrastructre
+X - 2.2 State of the art solutions
+X- 2.3 Shortcommings existing solutions / Solutions for Scalbility solutions
+
+X - 2.3 nach 3. verschieben
+
+X - Referenzen einfügen
+
+X - Sec. 4 Zahlen nicht als wort verwenden
+X - 4. two folds -> keine bullet points
+- Forward referenzen in 4.3
+- ... our GUI ...
+- Application -> without NES --> Check for consistency
+X - Backrefences Mode von 4 -> 3.2
+X - enumerate zu Bold mit punkt 4.3.2
+
+X- Bildunterschrift for Screenshot
+
+X - Conclusion -> NES nicht nochmal einführen
+X - Attendees hat gesehen, gelernt probleme in Iot use cases.
+    - In Iot kann erlernen...
+
+X - 4.1 smart city, gesellschaftliches interesse, ..., der demo
+X - Screenshot: Farben Blau / Grün beschreiben für die Operatoren Note
+
+
+X - New figure in 3. -> NES implementation...
+X - Cordinator / NES instancen  beschreiben
+
+X- Morgen Mittag um 12 Uhr an Steffen abgeben.
